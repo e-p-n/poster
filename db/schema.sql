@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS poster_db;
+
+CREATE DATABASE poster_db;
