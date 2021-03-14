@@ -265,6 +265,9 @@ footer .POST {
     font-size: 1.3em;
     margin-bottom: 12px;
   }
+  .post .title {
+    width: 100%;
+  }
 
   .btn-no-style {
     width: fit-content;
