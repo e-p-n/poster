@@ -1,8 +1,28 @@
-{{> post-info post}}
 
+<article class="post">
+    <div class="title"><h2>{{post.title}}</h2></div>
+    {{>meta post}}
+    <div class="content">
+        <p>{{&format_posts post.content}}</p>
+    </div>
+</article>
 
-{{> comments post.comments}}
+<div class="comments">
+    <h3>{{format_plural "Comment" post.comments.length}}</h3>
+    {{#each post.comments}}
+    <section class="comment">
+        <div>
+            {{comment_text}}
+        </div>
+        <div class="meta">
+            {{user.username}} on {{format_date created_at}}
+        </div>
+    </section>
+    {{/each}}
+</div>
+
 {{#if loggedIn}}
+<h3>Add a comment:</h3>
 <form class="comment-form">
     <div>
         <textarea name="comment-body"></textarea>
@@ -15,4 +35,3 @@
 
 <script src="/javascript/comment.js"></script>
 {{/if}}
-
