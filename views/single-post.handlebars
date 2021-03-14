@@ -8,7 +8,9 @@
 </article>
 
 <div class="comments">
+    {{#if post.comments}}
     <h3>{{format_plural "Comment" post.comments.length}}</h3>
+    {{/if}}
     {{#each post.comments}}
     <section class="comment">
         <div>
