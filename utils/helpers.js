@@ -20,5 +20,13 @@ module.exports = {
     },
     format_cut_content: content => {
         return content.substring(0,200);
+    },
+    format_posts: content => {
+
+        const regExp = new RegExp('\\n\\n', 'g');
+        return content
+            .toString()
+            .replace(regExp, `</p>  
+<p>`)
     }
 }

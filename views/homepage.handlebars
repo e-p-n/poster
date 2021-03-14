@@ -1,20 +1,18 @@
-<ol class="post-list">
   {{#each posts as |post|}}
-  <li>
     <article class="post">
-      <div class="title">
-        <strong><a href="/post/{{id}}">{{title}}</a></strong>
-        <div><em>{{format_cut_content content}} <a href="/post/{{id}}"></em> &hellip; read more</a></div>
+      <div class="title-bar">
+        <div class="title">
+          <strong><a href="/post/{{id}}">{{title}}</a></strong>
+        </div>
+        <div class="meta">
+          by <strong>{{user.username}}</strong> on
+          {{format_date created_at}}
+          |
+          {{comments.length}}&nbsp;{{format_plural "comment" comments.length}}
+        </div>
       </div>
-      <div class="meta">
-        <br>
-        by <strong>{{user.username}}</strong> on
-        {{format_date created_at}}
-        |
-        {{comments.length}} {{format_plural "comment" comments.length}}
-      </div>
+      <div class="content">{{format_cut_content content}} <a href="/post/{{id}}"> &hellip; read more</a></div>
+
     </article>
 
-  </li>
   {{/each}}
-</ol>

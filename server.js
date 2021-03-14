@@ -16,6 +16,7 @@ const sess = {
     cookie: {},
     resave: false,
     saveUninitialized: true,
+    expires: new Date(Date.now() + (2 * 60 *60 * 1000)),
     store: new SequelizeStore({
         db: sequelize
     })

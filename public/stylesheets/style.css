@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 body, html {
   height: 100%;
   padding: 0;
@@ -42,9 +43,17 @@ button:hover {
 }
 
 textarea, input {
-  padding: .5%;
+  padding: 10px;
   border-radius: 5px;
+  line-height: 1.6rem;
+  width: 80%;
   border: 1px solid #ccc;
+  font-family: sans-serif;
+}
+
+input {
+  font-size: 19px;
+  font-weight: bold;
 }
 
 textarea:focus, input:focus {
@@ -54,7 +63,8 @@ textarea:focus, input:focus {
 
 textarea {
   min-width: 40%;
-  min-height: 100px;
+  min-height: 200px;
+  font-size: 16px;
 }
 
 form > div {
@@ -65,30 +75,55 @@ form label {
   display: block;
 }
 
+label {
+  font-weight: bold;
+}
+
 .wrapper {
   width: 100%;
   min-height: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
+.comment {
+  clear: both;
+}
+
 header {
-  border-bottom: 1px solid #ccc;
+  background-color: #3486eb;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1%;
+  padding: 10px 30px;
+  color: #fff;
+  margin-bottom: 2%;
 }
 
 header h1 {
-  font-size: 1em;
+  font-size: 1.5em;
+}
+
+header h1 a {
+  color: #fff;
+}
+
+header h1 a:hover {
+  color: #fff;
+}
+
+header a {
+  color: #fff;
+}
+
+header a:hover {
+  color: #ff6;
 }
 
 main {
   flex: 1;
-  padding: 2% 4%;
+  padding: 0 30px;
 }
 
 .btn-no-style {
@@ -97,16 +132,15 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: #fff;
   font-size: 100%;
   font-weight: bold;
   transition: color .1s;
-  margin-left: 16px;
 }
 
 .btn-no-style:hover {
   background: none;
-  color: #3486eb;
+  color: #ff6;
 }
 
 .delete-post-btn {
@@ -120,6 +154,23 @@ main {
 .post {
   margin-bottom: 2%;
   line-height: 150%;
+}
+
+.post .title {
+  float: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.post .meta {
+  float: right;
+  color: #696969;
+  font-style: italic;
+}
+
+.post .content {
+  padding-top: 5px;
+  clear: both;
 }
 
 .post .title span {
@@ -143,16 +194,15 @@ main {
 }
 
 .comment-form {
-  margin-bottom: 5%;
+  margin: 1% 0 5%;
 }
 
 .comment {
   padding: 1%;
-  margin-bottom: 1%;
 }
 
 .comment:nth-child(odd) {
-  background-color: #fff5eb;
+  background-color: #dbe9f9;
 }
 
 .comment .meta {
@@ -161,12 +211,15 @@ main {
   opacity: .6;
 }
 
-.new-post-form input {
-  width: 300px;
-}
 
 .edit-post-form {
   margin-bottom: 5%;
+}
+
+.new-post-section {
+  border-top: 1px #797979 solid;
+  padding-top: 20px;
+  margin-top: 40px;
 }
 
 footer {
